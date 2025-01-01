@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="userConfigBean" class="groovy.com.example.demo.bean.UserConfig">
+        <property name="name" value="Shashi"></property>
+        <property name="className" value="exampleClass"></property>
+    </bean>
+
+    <bean id = "userServiceBean" class="groovy.com.example.demo.service.UserService">
+        <constructor-arg ref="userConfigBean"></constructor-arg>
+    </bean>
+
+    <bean id = "orderService" class="groovy.com.example.demo.service.OrderService" factory-method="createInstance">
+        <constructor-arg ref="userServiceBean"></constructor-arg>
+        <constructor-arg ref="userConfigBean"></constructor-arg>
+    </bean>
+</beans>
