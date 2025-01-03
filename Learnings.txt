@@ -1,0 +1,8 @@
+ioc : Inversion of Control (IoC) is a design principle where the control of object creation, configuration, and management is transferred from the application code to a framework or container.
+beans : A bean in Java is an object managed by the Spring IoC (Inversion of Control) container. Beans are the backbone of any Spring application, as they represent the objects that are instantiated, assembled, and managed by the Spring framework.
+dependency injection : Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC). It allows the Spring container to inject dependencies (objects) into a class at runtime, reducing tight coupling between components.
+Proxies : similar to middleware in nodejs
+        a.) Dynamic proxies are created at runtime and are commonly used with interfaces.
+        b.) CGLIB (third-party library) creates proxies by extending a class at runtime. It works with concrete classes, unlike java.lang.reflect.Proxy, which requires interfaces.
+        eg. Caching, etc
+@SpringBootApplication : it will automatically scan the components in the current package and its sub-packages. Thus it will register them in Spring’s Application Context, and allow us to inject beans using @Autowired.
